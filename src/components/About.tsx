@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section id="about" className="mx-auto max-w-5xl px-6 py-20 md:py-28">
       <FadeIn>
-        <span className="text-xs font-semibold uppercase tracking-widest text-accent">
+        <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">
           About
         </span>
         <h2 className="mt-3 text-4xl font-bold tracking-tight text-primary md:text-5xl">
@@ -69,8 +69,8 @@ export default function About() {
         <div className="mt-20 grid grid-cols-3 gap-px overflow-hidden rounded-xl border border-line">
           {stats.map((stat, i) => (
             <div key={i} className="bg-card px-6 py-8 text-center">
-              <p className="text-3xl font-bold text-primary">{stat.value}</p>
-              <p className="mt-1 text-sm text-muted">{stat.label}</p>
+              <p className="font-mono text-3xl font-bold text-primary">{stat.value}</p>
+              <p className="mt-1 font-mono text-sm text-muted">{stat.label}</p>
             </div>
           ))}
         </div>

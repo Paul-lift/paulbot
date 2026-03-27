@@ -26,7 +26,7 @@ export default function Projects() {
   return (
     <section id="projects" className="mx-auto max-w-5xl px-6 py-20 md:py-28">
       <FadeIn>
-        <span className="text-xs font-semibold uppercase tracking-widest text-accent">
+        <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">
           Projects
         </span>
         <h2 className="mt-3 text-4xl font-bold tracking-tight text-primary md:text-5xl">
@@ -74,7 +74,7 @@ export default function Projects() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-md border border-line bg-elevated px-2.5 py-1 text-xs text-muted"
+                    className="rounded-md border border-line bg-elevated px-2.5 py-1 font-mono text-xs text-muted"
                   >
                     {tag}
                   </span>

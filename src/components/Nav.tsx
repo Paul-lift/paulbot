@@ -32,8 +32,8 @@ export default function Nav() {
           href="#"
           className="font-semibold tracking-tight text-primary transition-colors hover:text-accent"
         >
-          {portfolio.personal.name.split(" ")[0].toLowerCase()}
-          <span className="text-accent">.</span>
+          <span className="font-mono">{portfolio.personal.name.split(" ")[0].toLowerCase()}</span>
+          <span className="font-mono text-accent">.</span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">

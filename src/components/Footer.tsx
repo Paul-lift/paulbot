@@ -31,7 +31,7 @@ export default function Footer() {
     <footer className="border-t border-line">
       <div className="mx-auto max-w-5xl px-6 py-12">
         <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
-          <p className="text-sm text-subtle">
+          <p className="font-mono text-sm text-subtle">
             &copy; {year}{" "}
             <span className="text-muted">{portfolio.personal.name}</span>
           </p>

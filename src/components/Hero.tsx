@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ParticleHero } from "@/components/ui/animated-hero"
+import { BlackHoleHeader } from "@/components/ui/blackhole-header"
 import portfolio from "@/data/portfolio.json"
 
 const container = {
@@ -40,9 +40,9 @@ export default function Hero() {
   const { name, role, tagline, email } = portfolio.personal
 
   return (
-    <ParticleHero particleCount={12}>
+    <BlackHoleHeader>
       {/* Main content */}
-      <div className="w-full max-w-5xl pt-24 pb-20">
+      <div className="w-full max-w-5xl">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -94,23 +94,6 @@ export default function Hero() {
           </a>
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.8 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="font-mono text-xs uppercase tracking-widest text-subtle">scroll</span>
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="h-4 w-px bg-subtle"
-          />
-        </div>
-      </motion.div>
-    </ParticleHero>
+    </BlackHoleHeader>
   )
 }

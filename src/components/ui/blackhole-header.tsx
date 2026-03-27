@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 interface BlackHoleHeaderProps {
   children: React.ReactNode
@@ -10,19 +10,30 @@ interface BlackHoleHeaderProps {
 export function BlackHoleHeader({ children }: BlackHoleHeaderProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollY } = useScroll()
+  const [mounted, setMounted] = useState(false)
   
-  // Scroll-based transforms
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  
   const rotation = useTransform(scrollY, [0, 1000], [0, 360])
   const scale = useTransform(scrollY, [0, 500], [1, 1.3])
   const opacity = useTransform(scrollY, [0, 400], [0.9, 0])
+
+  // Deterministic star positions
+  const stars = Array.from({ length: 60 }, (_, i) => ({
+    left: ((i * 37) % 100),
+    top: ((i * 73) % 100),
+    opacity: 0.3 + ((i * 17) % 5) / 10,
+  }))
 
   return (
     <section
       ref={containerRef}
       className="relative min-h-screen w-full overflow-hidden bg-background"
     >
-      {/* Black Hole */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-end pr-[10%]">
+      {/* Black Hole - fixed to viewport */}
+      <div className="pointer-events-none fixed right-0 top-0 z-0 flex h-screen w-full items-center justify-end pr-[10%]">
         <motion.div
           style={{ rotate: rotation, scale, opacity }}
           className="relative h-[500px] w-[500px]"
@@ -90,9 +101,10 @@ export function BlackHoleHeader({ children }: BlackHoleHeaderProps) {
           />
 
           {/* Particles being sucked in */}
-          {[...Array(12)].map((_, i) => {
+          {mounted && [...Array(12)].map((_, i) => {
             const angle = (i / 12) * Math.PI * 2
             const radius = 180
+            const duration = 3 + (i % 3) * 0.5
             return (
               <motion.div
                 key={i}
@@ -108,7 +120,7 @@ export function BlackHoleHeader({ children }: BlackHoleHeaderProps) {
                   scale: [1, 0],
                 }}
                 transition={{
-                  duration: 3 + Math.random() * 2,
+                  duration,
                   repeat: Infinity,
                   ease: "easeIn",
                   delay: i * 0.2,
@@ -119,23 +131,16 @@ export function BlackHoleHeader({ children }: BlackHoleHeaderProps) {
         </motion.div>
       </div>
 
-      {/* Starfield background */}
-      <div className="pointer-events-none absolute inset-0">
-        {[...Array(50)].map((_, i) => (
-          <motion.div
+      {/* Distant stars - fixed */}
+      <div className="pointer-events-none fixed inset-0 z-0">
+        {stars.map((star, i) => (
+          <div
             key={i}
-            className="absolute h-[2px] w-[2px] rounded-full bg-white/40"
+            className="absolute h-[1px] w-[1px] rounded-full bg-white"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              opacity: [0.2, 0.8, 0.2],
-            }}
-            transition={{
-              duration: 2 + Math.random() * 3,
-              repeat: Infinity,
-              delay: Math.random() * 2,
+              left: `${star.left}%`,
+              top: `${star.top}%`,
+              opacity: star.opacity,
             }}
           />
         ))}

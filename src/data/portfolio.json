@@ -1,0 +1,60 @@
+{
+  "personal": {
+    "name": "Your Name",
+    "role": "Full Stack Developer",
+    "tagline": "I build fast, clean, and thoughtful digital products.",
+    "bio": "I'm a developer passionate about building things that are both functional and beautiful. I specialize in full-stack web development with a focus on performance and user experience. Always chasing the next interesting problem to solve.",
+    "location": "City, Country",
+    "email": "hello@yourname.dev",
+    "available": true
+  },
+  "social": {
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "twitter": "https://twitter.com/yourusername"
+  },
+  "stats": [
+    { "label": "Years Experience", "value": "3+" },
+    { "label": "Projects Shipped", "value": "20+" },
+    { "label": "Technologies", "value": "15+" }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Project One",
+      "description": "A description of your first project. What does it do? What problem does it solve? What makes it interesting?",
+      "tags": ["React", "TypeScript", "Node.js"],
+      "github": "https://github.com/yourusername/project-one",
+      "live": "https://project-one.vercel.app"
+    },
+    {
+      "id": 2,
+      "title": "Project Two",
+      "description": "Highlight the technical challenges you overcame or the impact this project had on real users.",
+      "tags": ["Next.js", "PostgreSQL", "Tailwind CSS"],
+      "github": "https://github.com/yourusername/project-two",
+      "live": ""
+    },
+    {
+      "id": 3,
+      "title": "Project Three",
+      "description": "Keep the description concise but compelling — what would make someone want to click through and explore?",
+      "tags": ["Python", "FastAPI", "Docker"],
+      "github": "https://github.com/yourusername/project-three",
+      "live": "https://project-three.fly.dev"
+    },
+    {
+      "id": 4,
+      "title": "Project Four",
+      "description": "A fourth project showcasing a different skillset or a different type of work you've done.",
+      "tags": ["Vue.js", "Firebase", "Figma"],
+      "github": "https://github.com/yourusername/project-four",
+      "live": ""
+    }
+  ],
+  "skills": {
+    "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML / CSS"],
+    "Backend": ["Node.js", "Python", "PostgreSQL", "REST APIs"],
+    "Tools": ["Git", "Docker", "Figma", "Linux", "VS Code"]
+  }
+}

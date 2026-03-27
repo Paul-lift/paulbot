@@ -26,32 +26,46 @@
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
-/* Raw CSS variables for use in inline styles / arbitrary values */
+/* Raw CSS variables for inline styles / arbitrary values */
 :root {
   --accent-rgb: 196, 18, 48;
 }
 
-html {
-  scroll-behavior: smooth;
+/*
+  IMPORTANT: Keep base resets inside @layer base so Tailwind utilities
+  (in @layer utilities) can properly override them. Unlayered rules in
+  Tailwind 4 beat everything — that breaks px-*, py-*, mx-*, etc.
+*/
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-primary);
+    font-family: var(--font-sans);
+    max-width: 100vw;
+    overflow-x: hidden;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
-html, body {
-  background-color: var(--color-surface);
-  color: var(--color-primary);
-  font-family: var(--font-sans);
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+/* Section divider */
+.section-divider {
+  border-top: 1px solid var(--color-line);
 }
 
 /* Scrollbar */

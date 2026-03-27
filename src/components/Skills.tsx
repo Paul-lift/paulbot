@@ -5,7 +5,7 @@ export default function Skills() {
   const { skills } = portfolio
 
   return (
-    <section id="skills" className="mx-auto max-w-5xl px-6 py-32">
+    <section id="skills" className="mx-auto max-w-5xl px-6 py-20 md:py-28">
       <FadeIn>
         <span className="text-xs font-semibold uppercase tracking-widest text-accent">
           Skills

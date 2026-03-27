@@ -36,7 +36,7 @@ export default function Nav() {
           <span className="text-accent">.</span>
         </a>
 
-        <ul className="flex items-center gap-8">
+        <ul className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
             <li key={link.href}>
               <a
@@ -48,6 +48,14 @@ export default function Nav() {
             </li>
           ))}
         </ul>
+
+        {/* Mobile: show email CTA */}
+        <a
+          href="#contact"
+          className="rounded-lg border border-line px-4 py-1.5 text-xs text-muted transition-colors hover:border-accent hover:text-primary md:hidden"
+        >
+          Contact
+        </a>
       </nav>
     </header>
   )

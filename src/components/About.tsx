@@ -6,7 +6,7 @@ export default function About() {
   const { stats } = portfolio
 
   return (
-    <section id="about" className="mx-auto max-w-5xl px-6 py-32">
+    <section id="about" className="mx-auto max-w-5xl px-6 py-20 md:py-28">
       <FadeIn>
         <span className="text-xs font-semibold uppercase tracking-widest text-accent">
           About
@@ -41,15 +41,25 @@ export default function About() {
         </FadeIn>
 
         {/* Avatar placeholder */}
-        <FadeIn delay={0.2} direction="left">
-          <div className="relative mx-auto h-64 w-64 md:mx-0">
-            <div className="h-full w-full rounded-2xl border border-line bg-card flex items-center justify-center">
-              <span className="text-6xl font-bold text-elevated select-none">
+        <FadeIn delay={0.2} direction="left" className="flex justify-center md:justify-start">
+          <div className="relative h-72 w-72">
+            <div className="h-full w-full rounded-2xl border border-line bg-card flex items-center justify-center overflow-hidden">
+              {/* Replace with <Image> once you have a photo */}
+              <span
+                className="select-none text-7xl font-bold tracking-tighter"
+                style={{ color: "rgba(255,255,255,0.06)" }}
+              >
                 {name.split(" ").map((n) => n[0]).join("")}
               </span>
+              {/* Subtle inner gradient */}
+              <div
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  background: "radial-gradient(circle at 30% 40%, rgba(var(--accent-rgb),0.08), transparent 60%)",
+                }}
+              />
             </div>
-            {/* Accent corner */}
-            <div className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl border border-accent/20 -z-10" />
+            <div className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl border border-accent/15 -z-10" />
           </div>
         </FadeIn>
       </div>

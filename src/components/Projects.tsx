@@ -24,7 +24,7 @@ export default function Projects() {
   const { projects } = portfolio
 
   return (
-    <section id="projects" className="mx-auto max-w-5xl px-6 py-32">
+    <section id="projects" className="mx-auto max-w-5xl px-6 py-20 md:py-28">
       <FadeIn>
         <span className="text-xs font-semibold uppercase tracking-widest text-accent">
           Projects

@@ -51,7 +51,7 @@ export default function Hero() {
   const { name, role, tagline, email } = portfolio.personal
 
   return (
-    <section className="relative flex min-h-screen flex-col items-start justify-center px-6 pt-24">
+    <section className="relative flex min-h-screen flex-col justify-center px-6 pt-24">
       <Spotlight />
 
       {/* Subtle grid background */}

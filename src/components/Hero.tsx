@@ -87,13 +87,7 @@ export default function Hero() {
             View Projects
             <span>→</span>
           </a>
-          <a
-            href={`mailto:${email}`}
-            id="contact"
-            className="inline-flex items-center gap-2 rounded-lg border border-line px-6 py-3 font-mono text-sm font-medium text-muted transition-colors duration-200 hover:border-accent hover:text-primary"
-          >
-            Get in Touch
-          </a>
+          
         </motion.div>
 
         {/* Scroll hint */}

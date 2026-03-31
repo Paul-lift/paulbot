@@ -3,7 +3,7 @@
     "name": "Paul",
     "role": "Software Developer",
     "tagline": "I don't just write code — I understand the problem first, then build the cleanest solution to fix it.",
-    "bio": "I'm a developer who thinks before he types. I dig into the actual problem, figure out where it really lives, then build something clean and lasting. No cargo-culting, no over-engineering — just software that works and makes sense six months later.",
+    "bio": "Ever since I was a kid, I've been fascinated by how things work — how devices tick, how software comes to life, and what happens under the hood of the applications we use every day. That curiosity naturally led me to start writing my own programs at home, where I quickly discovered how much I love the creative side of building things. Today, my goal is to develop a deep understanding of programming, truly master different technologies, and help shape Swisscom's digital future.",
     "location": "City, Country",
     "email": "hello@yourname.dev",
     "available": true
@@ -18,7 +18,8 @@
     { "icon": "Guitar", "label": "Guitar" },
     { "icon": "Music", "label": "Music" }
   ],
-  "philosophy": "Dein Motto oder Lebenseinstellung hier — z.B. \"Ship fast, learn faster.\"",
+  "philosophy": " \"What if I fall? What if you fly?.\"",
+  "quote": "I keep coming back to this line whenever I'm about to do something that scares me a little. Which, honestly, is most things worth doing.",
   "stats": [
     { "label": "Years Experience", "value": "3+" },
     { "label": "Projects Shipped", "value": "20+" },
@@ -59,7 +60,13 @@
     }
   ],
   "skills": {
-    "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML / CSS"],
+    "Frontend": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "HTML / CSS"
+    ],
     "Backend": ["Node.js", "Python", "PostgreSQL", "REST APIs"],
     "Tools": ["Git", "Docker", "Figma", "Linux", "VS Code"]
   }

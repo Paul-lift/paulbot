@@ -1,16 +1,16 @@
-import { Dumbbell, Guitar, Music, type LucideIcon } from "lucide-react"
-import FadeIn from "@/components/ui/FadeIn"
-import portfolio from "@/data/portfolio.json"
+import { Dumbbell, Guitar, Music, type LucideIcon } from "lucide-react";
+import FadeIn from "@/components/ui/FadeIn";
+import portfolio from "@/data/portfolio.json";
 
 const iconMap: Record<string, LucideIcon> = {
   Dumbbell,
   Guitar,
   Music,
-}
+};
 
 export default function About() {
-  const { name, bio, location, available } = portfolio.personal
-  const { stats, interests, philosophy } = portfolio
+  const { name, bio, location, available } = portfolio.personal;
+  const { stats, interests, philosophy, quote } = portfolio;
 
   return (
     <section id="about" className="mx-auto max-w-5xl px-6 py-20 md:py-28">
@@ -26,9 +26,7 @@ export default function About() {
       <div className="mt-16 grid gap-16 md:grid-cols-2">
         {/* Bio + badges */}
         <FadeIn delay={0.1}>
-          <p className="text-base leading-relaxed text-muted">
-            {bio}
-          </p>
+          <p className="text-base leading-relaxed text-muted">{bio}</p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <span className="flex items-center gap-2 rounded-full border border-line px-4 py-1.5 text-sm text-muted">
@@ -48,19 +46,27 @@ export default function About() {
         </FadeIn>
 
         {/* Avatar placeholder */}
-        <FadeIn delay={0.2} direction="left" className="flex justify-center md:justify-start">
+        <FadeIn
+          delay={0.2}
+          direction="left"
+          className="flex justify-center md:justify-start"
+        >
           <div className="relative h-72 w-72">
             <div className="h-full w-full rounded-2xl border border-line bg-card flex items-center justify-center overflow-hidden">
               <span
                 className="select-none text-7xl font-bold tracking-tighter"
                 style={{ color: "rgba(255,255,255,0.06)" }}
               >
-                {name.split(" ").map((n) => n[0]).join("")}
+                {name
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")}
               </span>
               <div
                 className="pointer-events-none absolute inset-0"
                 style={{
-                  background: "radial-gradient(circle at 30% 40%, rgba(var(--accent-rgb),0.08), transparent 60%)",
+                  background:
+                    "radial-gradient(circle at 30% 40%, rgba(var(--accent-rgb),0.08), transparent 60%)",
                 }}
               />
             </div>
@@ -84,7 +90,11 @@ export default function About() {
                   key={i}
                   className="flex items-center gap-2 rounded-lg border border-line bg-elevated px-4 py-2 text-sm text-muted transition-colors duration-200 hover:border-accent/40 hover:text-primary"
                 >
-                  {iconMap[item.icon] && (() => { const Icon = iconMap[item.icon]; return <Icon size={15} />; })()}
+                  {iconMap[item.icon] &&
+                    (() => {
+                      const Icon = iconMap[item.icon];
+                      return <Icon size={15} />;
+                    })()}
                   {item.label}
                 </span>
               ))}
@@ -95,9 +105,16 @@ export default function About() {
           {philosophy && (
             <blockquote className="mt-6 border-l-2 border-accent/40 pl-5">
               <p className="text-base italic leading-relaxed text-muted">
-                &ldquo;{philosophy}&rdquo;
+                {philosophy}
               </p>
             </blockquote>
+          )}
+
+          {/* Personal quote */}
+          {quote && (
+            <p className="mt-5 text-sm leading-relaxed text-subtle">
+              {quote}
+            </p>
           )}
         </div>
       </FadeIn>
@@ -107,12 +124,14 @@ export default function About() {
         <div className="mt-8 grid grid-cols-3 gap-px overflow-hidden rounded-xl border border-line">
           {stats.map((stat, i) => (
             <div key={i} className="bg-card px-6 py-8 text-center">
-              <p className="font-mono text-3xl font-bold text-primary">{stat.value}</p>
+              <p className="font-mono text-3xl font-bold text-primary">
+                {stat.value}
+              </p>
               <p className="mt-1 font-mono text-sm text-muted">{stat.label}</p>
             </div>
           ))}
         </div>
       </FadeIn>
     </section>
-  )
+  );
 }

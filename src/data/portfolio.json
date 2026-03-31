@@ -1,9 +1,9 @@
 {
   "personal": {
-    "name": "Your Name",
-    "role": "Full Stack Developer",
-    "tagline": "I build fast, clean, and thoughtful digital products.",
-    "bio": "I'm a developer passionate about building things that are both functional and beautiful. I specialize in full-stack web development with a focus on performance and user experience. Always chasing the next interesting problem to solve.",
+    "name": "Paul",
+    "role": "Problem Solver",
+    "tagline": "I don't just write code — I understand the problem first, then build the cleanest solution to fix it.",
+    "bio": "I'm a developer who thinks before he types. I dig into the actual problem, figure out where it really lives, then build something clean and lasting. No cargo-culting, no over-engineering — just software that works and makes sense six months later.",
     "location": "City, Country",
     "email": "hello@yourname.dev",
     "available": true

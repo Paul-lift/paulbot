@@ -18,7 +18,7 @@ export default function SpaceBackground() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    const NUM_STARS = 420
+    const NUM_STARS = 380
     let width = (canvas.width = window.innerWidth)
     let height = (canvas.height = window.innerHeight)
     const stars: Star[] = []
@@ -45,28 +45,27 @@ export default function SpaceBackground() {
     window.addEventListener("resize", handleResize)
 
     const animate = () => {
-      // Speed: gentle drift at rest, warp on scroll
       const scrollY = window.scrollY
       const speed = 0.5 + scrollY * 0.005
 
-      // Fill background
-      ctx.fillStyle = "#0c0c0c"
+      // Deep space background
+      ctx.fillStyle = "#050510"
       ctx.fillRect(0, 0, width, height)
 
       const cx = width / 2
       const cy = height / 2
 
-      // Crimson nebula bloom near center
-      const nebula = ctx.createRadialGradient(cx, cy * 0.75, 0, cx, cy * 0.75, Math.min(width, height) * 0.5)
-      nebula.addColorStop(0, "rgba(196, 18, 48, 0.045)")
-      nebula.addColorStop(0.4, "rgba(120, 8, 24, 0.02)")
+      // Cyan nebula bloom — upper center
+      const nebula = ctx.createRadialGradient(cx, cy * 0.6, 0, cx, cy * 0.6, Math.min(width, height) * 0.5)
+      nebula.addColorStop(0, "rgba(0, 140, 220, 0.05)")
+      nebula.addColorStop(0.4, "rgba(0, 80, 180, 0.02)")
       nebula.addColorStop(1, "rgba(0, 0, 0, 0)")
       ctx.fillStyle = nebula
       ctx.fillRect(0, 0, width, height)
 
-      // Second softer bloom offset slightly
-      const nebula2 = ctx.createRadialGradient(cx * 1.3, cy * 1.4, 0, cx * 1.3, cy * 1.4, Math.min(width, height) * 0.35)
-      nebula2.addColorStop(0, "rgba(80, 8, 20, 0.025)")
+      // Purple secondary bloom — lower left
+      const nebula2 = ctx.createRadialGradient(cx * 0.4, cy * 1.5, 0, cx * 0.4, cy * 1.5, Math.min(width, height) * 0.38)
+      nebula2.addColorStop(0, "rgba(100, 20, 200, 0.04)")
       nebula2.addColorStop(1, "rgba(0, 0, 0, 0)")
       ctx.fillStyle = nebula2
       ctx.fillRect(0, 0, width, height)
@@ -102,15 +101,16 @@ export default function SpaceBackground() {
           ctx.beginPath()
           ctx.moveTo(px, py)
           ctx.lineTo(sx, sy)
-          ctx.strokeStyle = `rgba(255, 255, 255, ${brightness * 0.45})`
+          // Slight cyan tint on streaks
+          ctx.strokeStyle = `rgba(180, 230, 255, ${brightness * 0.4})`
           ctx.lineWidth = size * 0.35
           ctx.stroke()
         }
 
-        // Dot
+        // Star dot — cold blue-white
         ctx.beginPath()
         ctx.arc(sx, sy, size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(255, 255, 255, ${brightness})`
+        ctx.fillStyle = `rgba(200, 230, 255, ${brightness})`
         ctx.fill()
       }
 

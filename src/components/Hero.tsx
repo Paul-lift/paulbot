@@ -6,15 +6,16 @@ import portfolio from "@/data/portfolio.json"
 
 const container = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.04 } },
+  show: { transition: { staggerChildren: 0.06 } },
 }
 
 const letter = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
   show: {
     opacity: 1,
     y: 0,
-    transition: { ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number], duration: 0.5 },
+    filter: "blur(0px)",
+    transition: { ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number], duration: 0.6 },
   },
 }
 
@@ -24,11 +25,16 @@ function AnimatedName({ name }: { name: string }) {
       variants={container}
       initial="hidden"
       animate="show"
-      className="flex flex-wrap text-6xl font-bold tracking-tight text-primary md:text-8xl"
+      className="flex flex-wrap font-bold text-primary"
+      style={{
+        fontSize: "clamp(4rem, 13vw, 9rem)",
+        lineHeight: 0.92,
+        letterSpacing: "-0.03em",
+      }}
       aria-label={name}
     >
       {name.split("").map((char, i) => (
-        <motion.span key={i} variants={letter} className={char === " " ? "mr-4" : ""}>
+        <motion.span key={i} variants={letter} className={char === " " ? "mr-6" : ""}>
           {char === " " ? "\u00A0" : char}
         </motion.span>
       ))}
@@ -41,57 +47,68 @@ export default function Hero() {
 
   return (
     <BlackHoleHeader>
-      {/* Main content */}
       <div className="w-full max-w-5xl">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+        {/* Role label */}
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
-          className="mb-4 font-mono text-sm font-medium uppercase tracking-widest text-accent"
+          className="mb-6 flex items-center gap-3"
         >
-          Hello, I&apos;m
-        </motion.p>
+          <span className="h-px w-8 bg-accent opacity-50" />
+          <span className="font-mono text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            {role}
+          </span>
+        </motion.div>
 
         <AnimatedName name={name} />
 
+        {/* Tagline */}
         <motion.p
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-4 font-mono text-xl text-muted md:text-2xl"
-        >
-          {role}
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.75, duration: 0.5 }}
-          className="mt-6 max-w-xl text-base text-subtle leading-relaxed"
+          transition={{ delay: 0.85, duration: 0.6 }}
+          className="mt-8 max-w-md text-base leading-relaxed text-muted md:text-lg"
         >
           {tagline}
         </motion.p>
 
+        {/* CTAs */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.5 }}
+          transition={{ delay: 1.05, duration: 0.5 }}
           className="mt-10 flex flex-wrap gap-4"
         >
           <a
             href="#projects"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-lg bg-accent px-6 py-3 font-mono text-sm font-medium text-white transition-all duration-300 hover:bg-accent2"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-mono text-sm font-semibold text-surface transition-opacity duration-200 hover:opacity-80"
           >
             View Projects
-            <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+            <span>→</span>
           </a>
           <a
             href={`mailto:${email}`}
             id="contact"
-            className="inline-flex items-center gap-2 rounded-lg border border-line px-6 py-3 font-mono text-sm font-medium text-muted transition-all duration-300 hover:border-accent hover:text-primary"
+            className="inline-flex items-center gap-2 rounded-lg border border-line px-6 py-3 font-mono text-sm font-medium text-muted transition-colors duration-200 hover:border-accent hover:text-primary"
           >
             Get in Touch
           </a>
+        </motion.div>
+
+        {/* Scroll hint */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.8, duration: 0.8 }}
+          className="mt-20 flex items-center gap-2"
+        >
+          <motion.span
+            animate={{ y: [0, 5, 0] }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+            className="h-8 w-px bg-linear-to-b from-muted/50 to-transparent"
+          />
+          <span className="font-mono text-[10px] uppercase tracking-widest text-subtle">scroll</span>
         </motion.div>
       </div>
     </BlackHoleHeader>

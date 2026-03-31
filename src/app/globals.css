@@ -2,40 +2,42 @@
 
 /* ============================================================
    THEME — edit these values to change the entire color palette
+   ============================================================
+   Current theme: MINIMAL DARK
+   The hero shader provides the visual color — everything else
+   stays neutral so the shader can breathe.
+
+   To change the accent color, update --color-accent and keep
+   --accent-rgb in sync (format: R, G, B without hash).
    ============================================================ */
 @theme {
   /* Backgrounds */
-  --color-surface:  #0c0c0c;
-  --color-card:     #141414;
-  --color-elevated: #1c1c1c;
+  --color-surface:  #080808;
+  --color-card:     #111111;
+  --color-elevated: #1a1a1a;
 
-  /* Accent — currently: RHCP Crimson */
-  --color-accent:   #c41230;
-  --color-accent2:  #e01535;
+  /* Accent */
+  --color-accent:   #e8e8e8;
+  --color-accent2:  #888888;
 
   /* Text */
-  --color-primary:  #efefea;
+  --color-primary:  #f0f0f0;
   --color-muted:    #888888;
   --color-subtle:   #444444;
 
   /* Lines / borders */
-  --color-line:     #242424;
+  --color-line:     #222222;
 
   /* Font */
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
-/* Raw CSS variables for inline styles / arbitrary values */
+/* Raw CSS variables for inline styles — keep in sync with --color-accent */
 :root {
-  --accent-rgb: 196, 18, 48;
+  --accent-rgb: 232, 232, 232;
 }
 
-/*
-  IMPORTANT: Keep base resets inside @layer base so Tailwind utilities
-  (in @layer utilities) can properly override them. Unlayered rules in
-  Tailwind 4 beat everything — that breaks px-*, py-*, mx-*, etc.
-*/
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;
@@ -76,6 +78,6 @@
 
 /* Selection */
 ::selection {
-  background: rgba(var(--accent-rgb), 0.3);
+  background: rgba(var(--accent-rgb), 0.15);
   color: var(--color-primary);
 }

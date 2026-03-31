@@ -3,39 +3,47 @@
 /* ============================================================
    THEME — edit these values to change the entire color palette
    ============================================================
-   Current theme: MINIMAL DARK
-   The hero shader provides the visual color — everything else
-   stays neutral so the shader can breathe.
+   Current theme: MINIMAL DARK + BLUE TINT
 
-   To change the accent color, update --color-accent and keep
-   --accent-rgb in sync (format: R, G, B without hash).
+   ★ BLUE ACCENT — one place to change:
+       --color-blue: #313b51
+     All cards, borders and highlights derive from this.
+     Also update --blue-rgb to match (format: R, G, B).
+
+   ★ MAIN ACCENT (text highlights, buttons):
+       --color-accent: #e8e8e8
+     Update --accent-rgb accordingly.
    ============================================================ */
 @theme {
   /* Backgrounds */
   --color-surface:  #080808;
-  --color-card:     #111111;
-  --color-elevated: #1a1a1a;
+  --color-card:     #0d1017;   /* near-black with blue tint */
+  --color-elevated: #141b27;   /* slightly lighter blue-dark */
 
-  /* Accent */
+  /* Blue accent — change #313b51 here to update everywhere */
+  --color-blue:     #313b51;
+
+  /* Main accent (buttons, labels, highlights) */
   --color-accent:   #e8e8e8;
   --color-accent2:  #888888;
 
   /* Text */
   --color-primary:  #f0f0f0;
-  --color-muted:    #888888;
-  --color-subtle:   #444444;
+  --color-muted:    #8896a8;   /* muted with slight blue tint */
+  --color-subtle:   #3a4558;   /* subtle — close to blue */
 
-  /* Lines / borders */
-  --color-line:     #222222;
+  /* Lines / borders — uses the blue accent */
+  --color-line:     #313b51;
 
   /* Font */
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
-/* Raw CSS variables for inline styles — keep in sync with --color-accent */
+/* Raw CSS variables for inline styles */
 :root {
   --accent-rgb: 232, 232, 232;
+  --blue-rgb:   49, 59, 81;      /* keep in sync with --color-blue */
 }
 
 @layer base {
@@ -57,6 +65,26 @@
     min-height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Subtle dot grid — uses --color-blue, one place to change */
+    background-image: radial-gradient(
+      circle,
+      rgba(var(--blue-rgb), 0.35) 1px,
+      transparent 1px
+    );
+    background-size: 28px 28px;
+  }
+
+  /* Fixed blue glow blobs behind all content */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+      radial-gradient(ellipse 60% 50% at 15% 40%,  rgba(var(--blue-rgb), 0.18) 0%, transparent 100%),
+      radial-gradient(ellipse 45% 40% at 85% 15%,  rgba(var(--blue-rgb), 0.12) 0%, transparent 100%),
+      radial-gradient(ellipse 50% 35% at 70% 85%,  rgba(var(--blue-rgb), 0.10) 0%, transparent 100%);
   }
 
   a {
@@ -73,11 +101,11 @@
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--color-surface); }
-::-webkit-scrollbar-thumb { background: var(--color-elevated); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: var(--color-blue); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
 
 /* Selection */
 ::selection {
-  background: rgba(var(--accent-rgb), 0.15);
+  background: rgba(var(--blue-rgb), 0.45);
   color: var(--color-primary);
 }

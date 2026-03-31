@@ -13,6 +13,12 @@
     "linkedin": "https://linkedin.com/in/yourusername",
     "twitter": "https://twitter.com/yourusername"
   },
+  "interests": [
+    { "icon": "Dumbbell", "label": "Gym" },
+    { "icon": "Guitar", "label": "Guitar" },
+    { "icon": "Music", "label": "Music" }
+  ],
+  "philosophy": "Dein Motto oder Lebenseinstellung hier — z.B. \"Ship fast, learn faster.\"",
   "stats": [
     { "label": "Years Experience", "value": "3+" },
     { "label": "Projects Shipped", "value": "20+" },

@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { motion, useScroll, useTransform } from "framer-motion"
-import { ShaderAnimation } from "@/components/ui/shader-animation"
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ShaderAnimation } from "@/components/ui/shader-animation";
 
 interface BlackHoleHeaderProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export function BlackHoleHeader({ children }: BlackHoleHeaderProps) {
-  const { scrollY } = useScroll()
-  const shaderOpacity = useTransform(scrollY, [0, 500], [1, 0])
+  const { scrollY } = useScroll();
+  const shaderOpacity = useTransform(scrollY, [0, 500], [1, 0]);
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-black">
@@ -18,7 +18,7 @@ export function BlackHoleHeader({ children }: BlackHoleHeaderProps) {
         style={{ opacity: shaderOpacity }}
         className="pointer-events-none absolute inset-0"
       >
-        <ShaderAnimation />
+        <ShaderAnimation tint={[0.1, 0.3, 1.0]} />
       </motion.div>
 
       {/* Overlay: darkens center for text legibility, keeps edges vibrant */}
@@ -33,7 +33,10 @@ export function BlackHoleHeader({ children }: BlackHoleHeaderProps) {
       {/* Bottom fade — blends into the rest of the page */}
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 h-40"
-        style={{ background: "linear-gradient(to bottom, transparent, var(--color-surface))" }}
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent, var(--color-surface))",
+        }}
       />
 
       {/* Content */}
@@ -41,5 +44,5 @@ export function BlackHoleHeader({ children }: BlackHoleHeaderProps) {
         {children}
       </div>
     </section>
-  )
+  );
 }

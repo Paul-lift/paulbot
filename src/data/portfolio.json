@@ -2,16 +2,14 @@
   "personal": {
     "name": "Paul",
     "role": "Software Developer",
-    "tagline": "I don't just write code — I understand the problem first, then build the cleanest solution to fix it.",
-    "bio": "Ever since I was a kid, I've been fascinated by how things work — how devices tick, how software comes to life, and what happens under the hood of the applications we use every day. That curiosity naturally led me to start writing my own programs at home, where I quickly discovered how much I love the creative side of building things. Today, my goal is to develop a deep understanding of programming, truly master different technologies, and help shape Swisscom's digital future.",
+    "tagline": "I don't just write code, I understand the problem first, then build the cleanest solution to fix it.",
+    "bio": "Ever since I was a kid, I've been fascinated by how things work, how devices tick, how software comes to life, and what happens under the hood of the applications we use every day. That curiosity naturally led me to start writing my own programs at home, where I quickly discovered how much I love the creative side of building things. Today, my goal is to develop a deep understanding of programming, truly master different technologies, and help shape Swisscom's digital future.",
     "location": "City, Country",
-    "email": "hello@yourname.dev",
     "available": true
   },
   "social": {
-    "github": "https://github.com/Paul-lift",
-    "linkedin": "https://linkedin.com/in/yourusername",
-    "twitter": "https://twitter.com/yourusername"
+    "github": "https://code.swisscom.com/Paul.Bot",
+    "linkedin": "https://www.linkedin.com/in/paul-bot-989280322/"
   },
   "interests": [
     { "icon": "Dumbbell", "label": "Gym" },

@@ -118,20 +118,6 @@ export default function About() {
           )}
         </div>
       </FadeIn>
-
-      {/* Stats */}
-      <FadeIn delay={0.35}>
-        <div className="mt-8 grid grid-cols-3 gap-px overflow-hidden rounded-xl border border-line">
-          {stats.map((stat, i) => (
-            <div key={i} className="bg-card px-6 py-8 text-center">
-              <p className="font-mono text-3xl font-bold text-primary">
-                {stat.value}
-              </p>
-              <p className="mt-1 font-mono text-sm text-muted">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </FadeIn>
     </section>
   );
 }

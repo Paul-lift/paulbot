@@ -4,8 +4,8 @@
     "role": "Software Developer",
     "tagline": "I don't just write code, I understand the problem first, then build the cleanest solution to fix it.",
     "bio": "Ever since I was a kid, I've been fascinated by how things work, how devices tick, how software comes to life, and what happens under the hood of the applications we use every day. That curiosity naturally led me to start writing my own programs at home, where I quickly discovered how much I love the creative side of building things. Today, my goal is to develop a deep understanding of programming, truly master different technologies, and help shape Swisscom's digital future.",
-    "location": "City, Country",
-    "available": true
+    "location": "Aargau",
+    "available": false
   },
   "social": {
     "github": "https://code.swisscom.com/Paul.Bot",
@@ -19,7 +19,7 @@
   "philosophy": " \"What if I fall? What if you fly?.\"",
   "quote": "I keep coming back to this line whenever I'm about to do something that scares me a little. Which, honestly, is most things worth doing.",
   "stats": [
-    { "label": "Years Experience", "value": "3+" },
+    { "label": "Years Experience", "value": "1+" },
     { "label": "Projects Shipped", "value": "20+" },
     { "label": "Technologies", "value": "15+" }
   ],

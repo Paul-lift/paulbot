@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { BlackHoleHeader } from "@/components/ui/blackhole-header"
-import portfolio from "@/data/portfolio.json"
+import { motion } from "framer-motion";
+import { BlackHoleHeader } from "@/components/ui/blackhole-header";
+import portfolio from "@/data/portfolio.json";
 
 const container = {
   hidden: {},
   show: { transition: { staggerChildren: 0.06 } },
-}
+};
 
 const letter = {
   hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
@@ -15,9 +15,12 @@ const letter = {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number], duration: 0.6 },
+    transition: {
+      ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
+      duration: 0.6,
+    },
   },
-}
+};
 
 function AnimatedName({ name }: { name: string }) {
   return (
@@ -34,16 +37,20 @@ function AnimatedName({ name }: { name: string }) {
       aria-label={name}
     >
       {name.split("").map((char, i) => (
-        <motion.span key={i} variants={letter} className={char === " " ? "mr-6" : ""}>
+        <motion.span
+          key={i}
+          variants={letter}
+          className={char === " " ? "mr-6" : ""}
+        >
           {char === " " ? "\u00A0" : char}
         </motion.span>
       ))}
     </motion.h1>
-  )
+  );
 }
 
 export default function Hero() {
-  const { name, role, tagline, email } = portfolio.personal
+  const { name, role, tagline } = portfolio.personal;
 
   return (
     <BlackHoleHeader>
@@ -87,7 +94,6 @@ export default function Hero() {
             View Projects
             <span>→</span>
           </a>
-          
         </motion.div>
 
         {/* Scroll hint */}
@@ -102,9 +108,11 @@ export default function Hero() {
             transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
             className="h-8 w-px bg-linear-to-b from-muted/50 to-transparent"
           />
-          <span className="font-mono text-[10px] uppercase tracking-widest text-subtle">scroll</span>
+          <span className="font-mono text-[10px] uppercase tracking-widest text-subtle">
+            scroll
+          </span>
         </motion.div>
       </div>
     </BlackHoleHeader>
-  )
+  );
 }

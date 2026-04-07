@@ -26,11 +26,9 @@
   "projects": [
     {
       "id": 1,
-      "title": "Project One",
-      "description": "A description of your first project. What does it do? What problem does it solve? What makes it interesting?",
-      "tags": ["React", "TypeScript", "Node.js"],
-      "github": "https://github.com/yourusername/project-one",
-      "live": "https://project-one.vercel.app"
+      "title": "Team Zeno",
+      "description": "Built end-to-end from scratch — including the database schema, backend API, and frontend — to visualize internal processes in a clear way.",
+      "tags": ["Next.js", "Java Spring Boot", "MariaDB"]
     },
     {
       "id": 2,

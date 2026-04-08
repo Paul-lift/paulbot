@@ -52,11 +52,9 @@
     },
     {
       "id": 4,
-      "title": "Project Four",
-      "description": "A fourth project showcasing a different skillset or a different type of work you've done.",
-      "tags": ["Vue.js", "Firebase", "Figma"],
-      "github": "https://github.com/yourusername/project-four",
-      "live": ""
+      "title": "Team Minions ",
+      "description": "During my base semester I got familiar with Swisscom's internal guidelines and picked up the fundamentals of programming.",
+      "tags": ["HTML", "CSS", "JavaScript", "Java"]
     }
   ],
   "skills": {

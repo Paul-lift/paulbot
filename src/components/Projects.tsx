@@ -27,8 +27,17 @@ function ExternalIcon() {
   );
 }
 
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  tags: string[];
+  github?: string;
+  live?: string;
+};
+
 export default function Projects() {
-  const { projects } = portfolio;
+  const projects = portfolio.projects as Project[];
 
   return (
     <section id="projects" className="mx-auto max-w-5xl px-6 py-20 md:py-28">

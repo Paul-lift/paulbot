@@ -59,7 +59,7 @@ export default function About() {
                 alt={name}
                 fill
                 priority
-                className="object-cover object-[center_15%]"
+                className="object-cover object-[center_15%] rounded-2xl"
               />
             </div>
             <div className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl border border-accent/15 -z-10" />

@@ -7,7 +7,6 @@ const links = [
   { label: "About",    href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Skills",   href: "#skills" },
-  { label: "Contact",  href: "#contact" },
 ]
 
 export default function Nav() {
@@ -49,13 +48,6 @@ export default function Nav() {
           ))}
         </ul>
 
-        {/* Mobile: show email CTA */}
-        <a
-          href="#contact"
-          className="rounded-lg border border-line px-4 py-1.5 text-xs text-muted transition-colors hover:border-accent hover:text-primary md:hidden"
-        >
-          Contact
-        </a>
       </nav>
     </header>
   )

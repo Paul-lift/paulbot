@@ -28,19 +28,19 @@
       "id": 1,
       "title": "Team Zeno",
       "description": "Built end-to-end from scratch — including the database schema, backend API, and frontend — to visualize internal processes in a clear way.",
-      "tags": ["Next.js", "Java Spring Boot", "MariaDB"]
+      "tags": ["Next.js", "Java Spring Boot", "MariaDB", "SDX", "Docker"]
     },
     {
       "id": 2,
-      "title": "Project Two",
-      "description": "Highlight the technical challenges you overcame or the impact this project had on real users.",
-      "tags": ["Next.js", "PostgreSQL", "Tailwind CSS"],
+      "title": "Team Anchormann - Newsroom",
+      "description": "Worked in Team Anchormann on the fullstack application NewsRoom — a tool that keeps users informed about new features, updates, and bug fixes after every release.",
+      "tags": ["Angular", "Python", "FastAPI", "SDX", "Docker"],
       "github": "https://github.com/yourusername/project-two",
       "live": ""
     },
     {
       "id": 3,
-      "title": "Project Three",
+      "title": "CodeMix2",
       "description": "Keep the description concise but compelling — what would make someone want to click through and explore?",
       "tags": ["Python", "FastAPI", "Docker"],
       "github": "https://github.com/yourusername/project-three",

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Dumbbell, Guitar, Music, type LucideIcon } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import portfolio from "@/data/portfolio.json";
@@ -53,10 +54,12 @@ export default function About() {
         >
           <div className="relative h-72 w-72">
             <div className="h-full w-full rounded-2xl border border-line bg-card overflow-hidden">
-              <img
+              <Image
                 src="/portait.png"
                 alt={name}
-                className="h-full w-full object-cover object-[center_15%]"
+                fill
+                priority
+                className="object-cover object-[center_15%]"
               />
             </div>
             <div className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl border border-accent/15 -z-10" />

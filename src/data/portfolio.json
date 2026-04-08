@@ -61,11 +61,21 @@
     "Frontend": [
       "React",
       "Next.js",
+      "Angular",
       "TypeScript",
-      "Tailwind CSS",
-      "HTML / CSS"
+      "HTML",
+      "CSS",
+      "SDX",
+      "JavaScript"
     ],
-    "Backend": ["Node.js", "Python", "PostgreSQL", "REST APIs"],
-    "Tools": ["Git", "Docker", "Figma", "Linux", "VS Code"]
+    "Backend": [
+      "Node.js",
+      "Python",
+      "PostgreSQL",
+      "REST APIs",
+      "Java Spring Boot",
+      "FastAPI"
+    ],
+    "Tools": ["Git", "Rancher", "VS Code", "IntelliJ", "Jira", "Scrum"]
   }
 }

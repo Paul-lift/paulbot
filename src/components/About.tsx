@@ -52,22 +52,11 @@ export default function About() {
           className="flex justify-center md:justify-start"
         >
           <div className="relative h-72 w-72">
-            <div className="h-full w-full rounded-2xl border border-line bg-card flex items-center justify-center overflow-hidden">
-              <span
-                className="select-none text-7xl font-bold tracking-tighter"
-                style={{ color: "rgba(255,255,255,0.06)" }}
-              >
-                {name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
-              </span>
-              <div
-                className="pointer-events-none absolute inset-0"
-                style={{
-                  background:
-                    "radial-gradient(circle at 30% 40%, rgba(var(--accent-rgb),0.08), transparent 60%)",
-                }}
+            <div className="h-full w-full rounded-2xl border border-line bg-card overflow-hidden">
+              <img
+                src="/portait.png"
+                alt={name}
+                className="h-full w-full object-cover object-[center_15%]"
               />
             </div>
             <div className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl border border-accent/15 -z-10" />

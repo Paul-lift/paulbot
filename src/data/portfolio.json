@@ -34,17 +34,21 @@
       "id": 2,
       "title": "Team Anchormann - Newsroom",
       "description": "Worked in Team Anchormann on the fullstack application NewsRoom — a tool that keeps users informed about new features, updates, and bug fixes after every release.",
-      "tags": ["Angular", "Python", "FastAPI", "SDX", "Docker"],
-      "github": "https://github.com/yourusername/project-two",
-      "live": ""
+      "tags": ["Angular", "Python", "FastAPI", "SDX", "Docker"]
     },
     {
       "id": 3,
       "title": "CodeMix2",
-      "description": "Keep the description concise but compelling — what would make someone want to click through and explore?",
-      "tags": ["Python", "FastAPI", "Docker"],
-      "github": "https://github.com/yourusername/project-three",
-      "live": "https://project-three.fly.dev"
+      "description": "Mentored first-year apprentices through their projects, helping them get unstuck and build confidence in development.",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Java",
+        "Spring Boot"
+      ]
     },
     {
       "id": 4,

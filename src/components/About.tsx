@@ -11,7 +11,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function About() {
   const { name, bio, location, available } = portfolio.personal;
-  const { stats, interests, philosophy, quote } = portfolio;
+  const { stats, interests, philosophy, quote, references } = portfolio;
 
   return (
     <section id="about" className="mx-auto max-w-5xl px-6 py-20 md:py-28">
@@ -110,6 +110,60 @@ export default function About() {
           )}
         </div>
       </FadeIn>
+      {/* References */}
+      {references && references.length > 0 && (
+        <FadeIn delay={0.3}>
+          <div className="mt-16">
+            <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">
+              References
+            </span>
+            <h3 className="mt-3 text-2xl font-bold tracking-tight text-primary">
+              What people say
+            </h3>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              {references.map((ref, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl border border-line bg-card p-6 flex flex-col gap-4"
+                >
+                  <div className="relative">
+                    <span className="absolute -top-2 -left-1 text-6xl leading-none text-accent/20 font-serif select-none">&ldquo;</span>
+                    <div className="pt-6 flex flex-col gap-3">
+                      {(Array.isArray(ref.text) ? ref.text : [ref.text]).map((paragraph, j) => (
+                        <p key={j} className="text-base italic leading-relaxed text-muted">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                    <span className="float-right text-6xl leading-none text-accent/20 font-serif select-none">&rdquo;</span>
+                  </div>
+                  <div className="mt-auto flex items-center gap-3">
+                    {ref.avatar ? (
+                      <Image
+                        src={ref.avatar}
+                        alt={ref.name}
+                        width={40}
+                        height={40}
+                        className="rounded-full object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-elevated text-sm font-semibold text-primary">
+                        {ref.name.charAt(0)}
+                      </div>
+                    )}
+                    <div>
+                      <p className="text-sm font-semibold text-primary">{ref.name}</p>
+                      <p className="text-xs text-subtle">
+                        {ref.role} · {ref.company}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+      )}
     </section>
   );
 }

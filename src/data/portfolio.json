@@ -57,6 +57,19 @@
       "tags": ["HTML", "CSS", "JavaScript", "Java"]
     }
   ],
+  "references": [
+    {
+      "name": "Eva Dietze",
+      "role": "Lernbegleiterin",
+      "company": "Swisscom",
+      "text": [
+        "Ich durfte Paul ein Jahr lang während seiner Ausbildung als Applikationsentwickler begleiten und in dieser Zeit hat er mich mehrmals beeindruckt.",
+        "Was Paul beginnt, führt er mit grosser Sorgfalt und einem feinen Blick fürs Detail zu Ende. Er arbeitet sehr selbstständig, denkt voraus und überrascht immer wieder mit Ideen, die zeigen, wie viel Potenzial und Klarheit in ihm stecken.",
+        "Besonders beeindruckend ist, wie selbstverständlich er Neues aufnimmt und direkt in die Praxis umsetzt."
+      ],
+      "avatar": ""
+    }
+  ],
   "skills": {
     "Frontend": [
       "React",
